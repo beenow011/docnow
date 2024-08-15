@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DocNow
 
-## Getting Started
+DocNow is a powerful, real-time collaborative text editor inspired by Google Docs. Built with Next.js for the user interface, integrated with Liveblocks for real-time collaboration, and styled using Tailwind CSS, DocNow is designed to demonstrate advanced web development skills in creating a seamless, impactful real-time environment.
 
-First, run the development server:
+## 🤖 Introduction
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+DocNow showcases the developer's expertise in creating real-time collaborative environments. The application leverages the latest web technologies to deliver a rich user experience, making it a perfect platform for collaborative document editing.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚙️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js** - React framework for building server-side rendered and statically generated web applications.
+- **TypeScript** - Strongly typed programming language that builds on JavaScript.
+- **Liveblocks** - Real-time collaboration infrastructure.
+- **Lexical Editor** - Powerful text editor framework.
+- **ShadCN** - UI component library.
+- **Tailwind CSS** - Utility-first CSS framework for rapid UI development.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🔋 Features
 
-## Learn More
+- **Authentication:**
 
-To learn more about Next.js, take a look at the following resources:
+  - Secure user authentication using GitHub via NextAuth, ensuring safe and efficient sign-in, sign-out, and session management.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Collaborative Text Editor:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  - Multiple users can edit the same document simultaneously, with real-time updates reflecting changes instantly across all sessions.
 
-## Deploy on Vercel
+- **Document Management:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  - **Create Documents:** Easily create new documents, automatically saved and listed for quick access.
+  - **Delete Documents:** Remove documents owned by the user with a simple delete option.
+  - **Share Documents:** Share documents via email or link, with customizable view/edit permissions.
+  - **List Documents:** View and manage all documents owned or shared with the user, featuring search and sorting functionalities.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Comments:**
+
+  - Add inline and general comments, with threading to facilitate discussions and enhance collaboration.
+
+- **Active Collaborators on Text Editor:**
+
+  - Display real-time presence indicators to show which collaborators are currently active in the document.
+
+- **Notifications:**
+
+  - Receive notifications for document shares, new comments, and collaborator activities to stay informed and connected.
+
+- **Responsive Design:**
+
+  - Fully responsive across all devices, providing a consistent and smooth user experience on desktops, tablets, and smartphones.
+
+- **And More:**
+  - The application features clean code architecture and reusability, making it a robust, scalable, and maintainable project.
