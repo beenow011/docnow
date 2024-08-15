@@ -37,4 +37,5 @@ export const getDocument = async ({roomId,userId}:{roomId:string,userId:string})
     if(!hasAccess){
         throw new Error('You do not have access to this document.')
     }
+    return parseStringify(room)
 }
