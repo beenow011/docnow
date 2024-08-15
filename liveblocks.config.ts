@@ -24,6 +24,7 @@ declare global {
        avatar:string;
        color:string;
       };
+  
     };
 
     // Custom events, for useBroadcastEvent, useEventListener

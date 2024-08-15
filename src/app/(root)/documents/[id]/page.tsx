@@ -7,10 +7,10 @@ import React from 'react'
 function Documents
     () {
     return (
-        <div>
+        <main className='flex w-full flex-col items-center'>
             <Room />
 
-        </div>
+        </main>
     )
 }
 
