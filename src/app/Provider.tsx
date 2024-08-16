@@ -15,6 +15,10 @@ function Provider({ children }: { children: ReactNode }) {
             const users = await getClerkUsers({ userIds })
             return users
         }}>
+            {/* resolveMentionSuggestions={async ({ text, roomId }) => {
+                const roomUsers = await getClerkUsers({ roomId })
+
+            }} */}
 
             <ClientSideSuspense fallback={<Loader />}>
                 {children}
