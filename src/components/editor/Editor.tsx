@@ -38,6 +38,7 @@ export function Editor({ roomId, currentUserType }: { roomId: string, currentUse
     theme: Theme,
     editable: currentUserType === 'editor',
   });
+  // console.log(initialConfig)
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
