@@ -14,9 +14,11 @@ import Image from 'next/image';
 import { Label } from '../ui/label';
 import { Input } from '../ui/input';
 import UserTypeSelector from './UserTypeSelector';
+import Collaborator from './Collaborator';
+import { useSelf } from '@liveblocks/react/suspense';
 
 const ShareModal = ({ roomId, collaborators, creatorId, currentUserType }: ShareDocumentDialogProps) => {
-    const user = useUser()
+    const user = useSelf()
     const [open, setOpen] = useState(false)
     const [loading, setLoading] = useState(false)
     const [email, setEmail] = useState('')
@@ -60,6 +62,14 @@ const ShareModal = ({ roomId, collaborators, creatorId, currentUserType }: Share
 
                     </Button>
 
+                </div>
+                <div className="my-2 space-y-2">
+                    <ul className="flex flex-col">
+                        {collaborators.map((collaborator) => (
+                            <Collaborator key={collaborator.id}
+                                roomId={roomId} creatorId={creatorId} email={collaborator.email} collaborator={collaborator} user={user.info} />
+                        ))}
+                    </ul>
                 </div>
             </DialogContent>
         </Dialog>
