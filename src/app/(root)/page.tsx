@@ -1,5 +1,7 @@
 import AddDocsBtn from '@/components/local/AddDocsBtn'
+import { DeleteModal } from '@/components/local/DeleteModal'
 import Header from '@/components/local/Header'
+import Notifications from '@/components/local/Notifications'
 import { Button } from '@/components/ui/button'
 import { getDocuments } from '@/lib/actions/room.actions'
 import { dateConverter } from '@/lib/utils'
@@ -14,12 +16,12 @@ async function page() {
   const clerkUser = await currentUser()
   if (!clerkUser) redirect('/sign-in')
   const roomDocuments = await getDocuments(clerkUser.emailAddresses[0].emailAddress)
-  // console.log(roomDocuments, 1)
+  // console.log(roomDocuments.data[0].usersAccesses, 1)
   return (
     <main className="home-container">
       <Header className='sticky left-0 top-0'>
         <div className='flex items-center gap-2 lg:gap-4'>
-          Notification
+          <Notifications />
           <SignedIn>
             <UserButton />
           </SignedIn>
@@ -35,7 +37,7 @@ async function page() {
             />
           </div>
           <ul className="document-ul">
-            {roomDocuments.data.map(({ id, metadata, createdAt }: any) => (
+            {roomDocuments.data.map(({ id, metadata, createdAt, usersAccesses }: any) => (
               <li key={id} className="document-list-item">
                 <Link href={`/documents/${id}`} className="flex flex-1 items-center gap-4">
                   <div className="hidden rounded-md bg-dark-500 p-2 sm:block">
@@ -51,7 +53,7 @@ async function page() {
                     <p className="text-sm font-light text-blue-100">Created about {dateConverter(createdAt)}</p>
                   </div>
                 </Link>
-                {/* <DeleteModal roomId={id} /> */}
+                {usersAccesses[clerkUser.emailAddresses[0].emailAddress]?.includes('room:write') ? <DeleteModal roomId={id} /> : <p className='view-only-tag'>View only</p>}
               </li>
             ))}
           </ul>
